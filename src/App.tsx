@@ -1,12 +1,17 @@
 import { FC } from 'react';
-import styled from 'styled-components';
+import { Routes, Route } from 'react-router-dom';
 
-const H1 = styled.h1`
-  color: red;
-`;
+import Home from './pages/Home';
 
 const App: FC = () => {
-  return <H1>Hello world!!</H1>;
+  return (
+    <div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='*' element={<Home />} />
+      </Routes>
+    </div>
+  );
 };
 
 export default App;
